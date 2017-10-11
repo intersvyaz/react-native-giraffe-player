@@ -99,11 +99,7 @@ public class GiraffePlayer {
                 videoView.start();
                 doPauseResume();
             } else if (v.getId() == R.id.app_video_finish) {
-                if (!fullScreenOnly && !portrait) {
-                    activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-                } else {
-                    activity.finish();
-                }
+                activity.finish();
             }
         }
     };
@@ -790,10 +786,6 @@ public class GiraffePlayer {
     }
 
     public boolean onBackPressed() {
-        if (!fullScreenOnly && getScreenOrientation() == ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE) {
-            activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-            return true;
-        }
         return false;
     }
 
