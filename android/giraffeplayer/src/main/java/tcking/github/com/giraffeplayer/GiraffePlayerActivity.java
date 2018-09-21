@@ -23,6 +23,7 @@ public class GiraffePlayerActivity extends Activity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.giraffe_player);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         Config config = getIntent().getParcelableExtra("config");
         if (config == null || TextUtils.isEmpty(config.url)) {
             Toast.makeText(this, R.string.giraffe_player_url_empty, Toast.LENGTH_SHORT).show();
